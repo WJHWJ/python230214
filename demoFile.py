@@ -19,3 +19,24 @@ print("{0:e}".format(4/3))
 print("{0:f}".format(4/3))
 print("{0:.2f}".format(4/3))
 print("{0:,}".format(15000000))
+
+#파일 쓰기
+f = open("c:\\work\\demo.txt","wt",encoding="utf-8")
+f.write("첫번째\n두번째\n세번째\n")
+f.close()
+
+#파일 읽기
+f = open("c:/work/demo.txt","rt",encoding="utf-8")
+result = f.read()
+print(result)
+
+#어디쯤 읽고 있어?
+print(f.tell())
+#다시 처음으로 돌아가(리셋)
+f.seek(0)
+lst = f.readlines()
+print(lst)
+for item in lst:
+    print(item, end="")
+
+f.close()
